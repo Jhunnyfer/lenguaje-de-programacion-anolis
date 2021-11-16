@@ -1,0 +1,60 @@
+inicio
+/## ANOLIS #/
+// CALCULADORA HECHA EN ANOLIS  
+    //INTEGRANTES:
+    //WALTER RIVERA
+    //EDWIN RENDON
+    //JHUNNYFER MENA
+
+    //GRUPO: COMPILADORES ITM CPI 82-1
+
+    //PROFESOR:
+    //GABRIEL TABORDA BLANDÓN
+
+
+mov continuar: booleano(verdadero);
+mov usuario: cadena("anolis");
+
+hacer{ 
+
+        salida ("Ingrese el primer numero que se calculara:"); 
+        mov a :entero(entrada()); 
+
+        salida("Ingrese el segundo numero que se calculara:"); 
+        mov b :entero(entrada());
+
+        salida("Ingrese el operador: +, -, *, /"); 
+        mov compara :cadena(entrada());
+
+        segun (compara) { 
+            caso "+": 
+                salida("La suma es ：" + (a + b)); 
+            romper; 
+            caso "-": 
+                salida("La diferencia es:" + (a-b)); 
+            romper; 
+            caso "*": 
+                salida("El producto es:" + (a * b)); 
+            romper; 
+            caso "/": 
+                salida("La division es:" + (a / b)); 
+            romper; 
+            pordefecto: 
+                salida("Error operador incorrecto"); 
+            romper; 
+        }
+
+    salida("Desea continuar ? y/n"); 
+    mov valida :cadena(entrada()); 
+
+    si(valida == "y" && usuario <> "admin") { 
+        continuar = verdadero; 
+        salida("Continuar usando"); 
+    }no{ 
+        continuar = falso; 
+        salida("Gracias por usar este calculo, bienvenido a usarlo la proxima vez, nos vemos"); 
+    } 
+
+} mientras (verdadero)
+
+fin
